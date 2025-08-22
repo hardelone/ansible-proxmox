@@ -1,0 +1,24 @@
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [proxy]
+ok: [kasm]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+changed: [kasm]
+changed: [proxy]
+changed: [jumpbox]
+changed: [contabo]
+fatal: [grafana]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., W:GPG error: https://repos.influxdata.com/debian stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY D8FF8E1F7DF8B07E, E:The repository 'https://repos.influxdata.com/debian stable InRelease' is not signed."}
+
+TASK [Perform dist-upgrade] ****************************************************
+changed: [kasm]
+changed: [proxy]
+changed: [jumpbox]
+changed: [contabo]
+
+TASK [Reboot if necessary] *****************************************************

@@ -1,0 +1,92 @@
+
+PLAY [Update and restart LXC containers via SSH] *******************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [prowlarr]
+ok: [prometheus]
+ok: [sonarr]
+ok: [radarr]
+ok: [plex]
+ok: [tautulli]
+ok: [tdarr]
+ok: [qbittorrent]
+ok: [flaresolwerr]
+ok: [jellyfin]
+ok: [jellyseerr]
+ok: [gotify]
+ok: [homepage]
+ok: [vaultwarden]
+ok: [uptime_kuma]
+ok: [syncthing]
+
+TASK [Update apt cache on LXC container] ***************************************
+changed: [sonarr]
+changed: [tautulli]
+changed: [plex]
+changed: [flaresolwerr]
+changed: [radarr]
+changed: [prowlarr]
+changed: [prometheus]
+changed: [tdarr]
+changed: [qbittorrent]
+changed: [gotify]
+changed: [homepage]
+changed: [uptime_kuma]
+changed: [vaultwarden]
+changed: [syncthing]
+changed: [jellyseerr]
+changed: [jellyfin]
+
+TASK [Upgrade packages on LXC container] ***************************************
+changed: [sonarr]
+changed: [tautulli]
+changed: [plex]
+fatal: [radarr]: FAILED! => {"changed": false, "msg": "'/usr/bin/apt-get dist-upgrade ' failed: E: Sub-process /usr/bin/dpkg returned an error code (1)\n", "rc": 100, "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nCalculating upgrade...\nThe following packages will be upgraded:\n  libperl5.36 perl perl-base perl-modules-5.36\n4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n3 not fully installed or removed.\nNeed to get 8870 kB of archives.\nAfter this operation, 4096 B of additional disk space will be used.\nGet:1 http://security.debian.org bookworm-security/main amd64 libperl5.36 amd64 5.36.0-7+deb12u2 [4207 kB]\nGet:2 http://security.debian.org bookworm-security/main amd64 perl amd64 5.36.0-7+deb12u2 [239 kB]\nGet:3 http://security.debian.org bookworm-security/main amd64 perl-base amd64 5.36.0-7+deb12u2 [1609 kB]\nGet:4 http://security.debian.org bookworm-security/main amd64 perl-modules-5.36 all 5.36.0-7+deb12u2 [2815 kB]\napt-listchanges: Reading changelogs...\nFetched 8870 kB in 0s (33.3 MB/s)\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database ... 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75%\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(Reading database ... 95%\r(Reading database ... 100%\r(Reading database ... 20364 files and directories currently installed.)\r\nPreparing to unpack .../libperl5.36_5.36.0-7+deb12u2_amd64.deb ...\r\nUnpacking libperl5.36:amd64 (5.36.0-7+deb12u2) over (5.36.0-7+deb12u1) ...\r\nPreparing to unpack .../perl_5.36.0-7+deb12u2_amd64.deb ...\r\nUnpacking perl (5.36.0-7+deb12u2) over (5.36.0-7+deb12u1) ...\r\nPreparing to unpack .../perl-base_5.36.0-7+deb12u2_amd64.deb ...\r\nUnpacking perl-base (5.36.0-7+deb12u2) over (5.36.0-7+deb12u1) ...\r\nSetting up perl-base (5.36.0-7+deb12u2) ...\r\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database ... 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75%\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(Reading database ... 95%\r(Reading database ... 100%\r(Reading database ... 20364 files and directories currently installed.)\r\nPreparing to unpack .../perl-modules-5.36_5.36.0-7+deb12u2_all.deb ...\r\nUnpacking perl-modules-5.36 (5.36.0-7+deb12u2) over (5.36.0-7+deb12u1) ...\r\nSetting up openssh-client (1:9.2p1-2+deb12u5) ...\r\nchgrp: changing group of '/usr/bin/ssh-agent': Invalid argument\r\ndpkg: error processing package openssh-client (--configure):\r\n installed openssh-client package post-installation script subprocess returned error exit status 1\r\nSetting up perl-modules-5.36 (5.36.0-7+deb12u2) ...\r\nSetting up libperl5.36:amd64 (5.36.0-7+deb12u2) ...\r\ndpkg: dependency problems prevent configuration of openssh-sftp-server:\r\n openssh-sftp-server depends on openssh-client (= 1:9.2p1-2+deb12u5); however:\r\n  Package openssh-client is not configured yet.\r\n\r\ndpkg: error processing package openssh-sftp-server (--configure):\r\n dependency problems - leaving unconfigured\r\ndpkg: dependency problems prevent configuration of openssh-server:\r\n openssh-server depends on openssh-client (= 1:9.2p1-2+deb12u5); however:\r\n  Package openssh-client is not configured yet.\r\n openssh-server depends on openssh-sftp-server; however:\r\n  Package openssh-sftp-server is not configured yet.\r\n\r\ndpkg: error processing package openssh-server (--configure):\r\n dependency problems - leaving unconfigured\r\nSetting up perl (5.36.0-7+deb12u2) ...\r\nProcessing triggers for man-db (2.11.2-2) ...\r\nProcessing triggers for libc-bin (2.36-9+deb12u10) ...\r\nErrors were encountered while processing:\r\n openssh-client\r\n openssh-sftp-server\r\n openssh-server\r\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "Calculating upgrade...", "The following packages will be upgraded:", "  libperl5.36 perl perl-base perl-modules-5.36", "4 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.", "3 not fully installed or removed.", "Need to get 8870 kB of archives.", "After this operation, 4096 B of additional disk space will be used.", "Get:1 http://security.debian.org bookworm-security/main amd64 libperl5.36 amd64 5.36.0-7+deb12u2 [4207 kB]", "Get:2 http://security.debian.org bookworm-security/main amd64 perl amd64 5.36.0-7+deb12u2 [239 kB]", "Get:3 http://security.debian.org bookworm-security/main amd64 perl-base amd64 5.36.0-7+deb12u2 [1609 kB]", "Get:4 http://security.debian.org bookworm-security/main amd64 perl-modules-5.36 all 5.36.0-7+deb12u2 [2815 kB]", "apt-listchanges: Reading changelogs...", "Fetched 8870 kB in 0s (33.3 MB/s)", "(Reading database ... ", "(Reading database ... 5%", "(Reading database ... 10%", "(Reading database ... 15%", "(Reading database ... 20%", "(Reading database ... 25%", "(Reading database ... 30%", "(Reading database ... 35%", "(Reading database ... 40%", "(Reading database ... 45%", "(Reading database ... 50%", "(Reading database ... 55%", "(Reading database ... 60%", "(Reading database ... 65%", "(Reading database ... 70%", "(Reading database ... 75%", "(Reading database ... 80%", "(Reading database ... 85%", "(Reading database ... 90%", "(Reading database ... 95%", "(Reading database ... 100%", "(Reading database ... 20364 files and directories currently installed.)", "Preparing to unpack .../libperl5.36_5.36.0-7+deb12u2_amd64.deb ...", "Unpacking libperl5.36:amd64 (5.36.0-7+deb12u2) over (5.36.0-7+deb12u1) ...", "Preparing to unpack .../perl_5.36.0-7+deb12u2_amd64.deb ...", "Unpacking perl (5.36.0-7+deb12u2) over (5.36.0-7+deb12u1) ...", "Preparing to unpack .../perl-base_5.36.0-7+deb12u2_amd64.deb ...", "Unpacking perl-base (5.36.0-7+deb12u2) over (5.36.0-7+deb12u1) ...", "Setting up perl-base (5.36.0-7+deb12u2) ...", "(Reading database ... ", "(Reading database ... 5%", "(Reading database ... 10%", "(Reading database ... 15%", "(Reading database ... 20%", "(Reading database ... 25%", "(Reading database ... 30%", "(Reading database ... 35%", "(Reading database ... 40%", "(Reading database ... 45%", "(Reading database ... 50%", "(Reading database ... 55%", "(Reading database ... 60%", "(Reading database ... 65%", "(Reading database ... 70%", "(Reading database ... 75%", "(Reading database ... 80%", "(Reading database ... 85%", "(Reading database ... 90%", "(Reading database ... 95%", "(Reading database ... 100%", "(Reading database ... 20364 files and directories currently installed.)", "Preparing to unpack .../perl-modules-5.36_5.36.0-7+deb12u2_all.deb ...", "Unpacking perl-modules-5.36 (5.36.0-7+deb12u2) over (5.36.0-7+deb12u1) ...", "Setting up openssh-client (1:9.2p1-2+deb12u5) ...", "chgrp: changing group of '/usr/bin/ssh-agent': Invalid argument", "dpkg: error processing package openssh-client (--configure):", " installed openssh-client package post-installation script subprocess returned error exit status 1", "Setting up perl-modules-5.36 (5.36.0-7+deb12u2) ...", "Setting up libperl5.36:amd64 (5.36.0-7+deb12u2) ...", "dpkg: dependency problems prevent configuration of openssh-sftp-server:", " openssh-sftp-server depends on openssh-client (= 1:9.2p1-2+deb12u5); however:", "  Package openssh-client is not configured yet.", "", "dpkg: error processing package openssh-sftp-server (--configure):", " dependency problems - leaving unconfigured", "dpkg: dependency problems prevent configuration of openssh-server:", " openssh-server depends on openssh-client (= 1:9.2p1-2+deb12u5); however:", "  Package openssh-client is not configured yet.", " openssh-server depends on openssh-sftp-server; however:", "  Package openssh-sftp-server is not configured yet.", "", "dpkg: error processing package openssh-server (--configure):", " dependency problems - leaving unconfigured", "Setting up perl (5.36.0-7+deb12u2) ...", "Processing triggers for man-db (2.11.2-2) ...", "Processing triggers for libc-bin (2.36-9+deb12u10) ...", "Errors were encountered while processing:", " openssh-client", " openssh-sftp-server", " openssh-server"]}
+changed: [prowlarr]
+changed: [flaresolwerr]
+changed: [prometheus]
+changed: [tdarr]
+changed: [gotify]
+changed: [homepage]
+changed: [uptime_kuma]
+changed: [syncthing]
+changed: [vaultwarden]
+changed: [jellyseerr]
+changed: [qbittorrent]
+changed: [jellyfin]
+
+TASK [Reboot the container if upgrade was done] ********************************
+changed: [prowlarr]
+changed: [plex]
+changed: [sonarr]
+changed: [prometheus]
+changed: [tautulli]
+changed: [flaresolwerr]
+changed: [tdarr]
+changed: [jellyseerr]
+changed: [gotify]
+changed: [jellyfin]
+changed: [homepage]
+changed: [vaultwarden]
+changed: [uptime_kuma]
+changed: [syncthing]
+changed: [qbittorrent]
+
+PLAY RECAP *********************************************************************
+flaresolwerr               : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gotify                     : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+homepage                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+jellyfin                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+jellyseerr                 : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+plex                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+prometheus                 : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+prowlarr                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+qbittorrent                : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+radarr                     : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+sonarr                     : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+syncthing                  : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+tautulli                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+tdarr                      : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+uptime_kuma                : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+vaultwarden                : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

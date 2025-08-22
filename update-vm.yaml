@@ -1,0 +1,23 @@
+---
+- name: Update VM nodes
+  hosts: vm
+  become: yes
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Perform dist-upgrade
+      apt:
+        upgrade: dist
+        autoremove: yes
+        autoclean: yes
+      register: apt_upgrade_result
+      # Zaregistrujeme výstup do premennej apt_upgrade_result
+
+    - name: Reboot if necessary
+      reboot:
+        msg: "Rebooting after dist-upgrade"
+        connect_timeout: 5
+        reboot_timeout: 600
+      when: apt_upgrade_result.changed  # Kontrola, či došlo k zmene počas upgrade

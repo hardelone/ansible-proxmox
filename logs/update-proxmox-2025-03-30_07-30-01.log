@@ -1,0 +1,59 @@
+
+PLAY [Update Proxmox nodes] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [proxbackup]
+ok: [ron]
+ok: [harry]
+ok: [dumbledore]
+ok: [hermiona]
+
+TASK [Set kernel_updated to False initially] ***********************************
+ok: [dumbledore]
+ok: [harry]
+ok: [proxbackup]
+ok: [ron]
+ok: [hermiona]
+
+TASK [Get the current kernel version] ******************************************
+ok: [proxbackup]
+ok: [ron]
+ok: [harry]
+ok: [dumbledore]
+ok: [hermiona]
+
+TASK [Update apt cache] ********************************************************
+changed: [proxbackup]
+changed: [ron]
+changed: [dumbledore]
+changed: [harry]
+changed: [hermiona]
+
+TASK [Perform dist-upgrade] ****************************************************
+changed: [dumbledore]
+changed: [ron]
+changed: [proxbackup]
+changed: [harry]
+changed: [hermiona]
+
+TASK [Set kernel_updated to True if kernel upgraded] ***************************
+skipping: [dumbledore]
+skipping: [harry]
+skipping: [ron]
+skipping: [hermiona]
+skipping: [proxbackup]
+
+TASK [Reboot if necessary (kernel upgrade)] ************************************
+skipping: [dumbledore]
+skipping: [harry]
+skipping: [ron]
+skipping: [hermiona]
+skipping: [proxbackup]
+
+PLAY RECAP *********************************************************************
+dumbledore                 : ok=5    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+harry                      : ok=5    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+hermiona                   : ok=5    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+proxbackup                 : ok=5    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+ron                        : ok=5    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+

@@ -1,0 +1,38 @@
+
+PLAY [Update Proxmox nodes] ****************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [proxbackup]
+ok: [harry]
+ok: [dumbledore]
+ok: [hermiona]
+ok: [ron]
+
+TASK [Set kernel_updated to False initially] ***********************************
+ok: [dumbledore]
+ok: [harry]
+ok: [ron]
+ok: [hermiona]
+ok: [proxbackup]
+
+TASK [Get the current kernel version] ******************************************
+ok: [proxbackup]
+ok: [harry]
+ok: [dumbledore]
+ok: [hermiona]
+ok: [ron]
+
+TASK [Update apt cache] ********************************************************
+fatal: [proxbackup]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [harry]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [dumbledore]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [hermiona]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [ron]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+
+PLAY RECAP *********************************************************************
+dumbledore                 : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+harry                      : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+hermiona                   : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+proxbackup                 : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+ron                        : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+

@@ -1,0 +1,22 @@
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [grafana]
+ok: [proxy]
+fatal: [contabo]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 213.199.52.4 port 2200: No route to host", "unreachable": true}
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+changed: [proxy]
+changed: [jumpbox]
+fatal: [grafana]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: W:Updating from such a repository can't be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., W:GPG error: https://repos.influxdata.com/debian stable InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY D8FF8E1F7DF8B07E, E:The repository 'https://repos.influxdata.com/debian stable InRelease' is not signed."}
+
+TASK [Perform dist-upgrade] ****************************************************
+changed: [kasm]
+changed: [jumpbox]
+changed: [proxy]
+
+TASK [Reboot if necessary] *****************************************************

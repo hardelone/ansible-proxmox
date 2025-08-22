@@ -1,0 +1,90 @@
+
+PLAY [Update and restart LXC containers via SSH] *******************************
+
+TASK [Gathering Facts] *********************************************************
+fatal: [radarr]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nIT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!\r\nSomeone could be eavesdropping on you right now (man-in-the-middle attack)!\r\nIt is also possible that a host key has just been changed.\r\nThe fingerprint for the ED25519 key sent by the remote host is\nSHA256:ofZ7iu6TWMn3r3jJKs/FYlOOO9si4r/flqBWrAm+22s.\r\nPlease contact your system administrator.\r\nAdd correct host key in /home/roberto/.ssh/known_hosts to get rid of this message.\r\nOffending ECDSA key in /home/roberto/.ssh/known_hosts:116\r\n  remove with:\r\n  ssh-keygen -f \"/home/roberto/.ssh/known_hosts\" -R \"10.20.40.52\"\r\nHost key for 10.20.40.52 has changed and you have requested strict checking.\r\nHost key verification failed.", "unreachable": true}
+ok: [prometheus]
+ok: [prowlarr]
+ok: [tautulli]
+ok: [sonarr]
+ok: [plex]
+ok: [tdarr]
+ok: [jellyseerr]
+ok: [flaresolwerr]
+ok: [qbittorrent]
+ok: [jellyfin]
+ok: [homepage]
+ok: [gotify]
+ok: [vaultwarden]
+ok: [syncthing]
+ok: [uptime_kuma]
+
+TASK [Update apt cache on LXC container] ***************************************
+changed: [sonarr]
+changed: [prometheus]
+changed: [prowlarr]
+changed: [tautulli]
+changed: [plex]
+changed: [jellyfin]
+changed: [jellyseerr]
+changed: [flaresolwerr]
+changed: [tdarr]
+changed: [qbittorrent]
+changed: [gotify]
+changed: [homepage]
+changed: [uptime_kuma]
+changed: [vaultwarden]
+changed: [syncthing]
+
+TASK [Upgrade packages on LXC container] ***************************************
+ok: [prometheus]
+ok: [sonarr]
+ok: [tautulli]
+ok: [prowlarr]
+ok: [plex]
+ok: [tdarr]
+ok: [jellyfin]
+ok: [flaresolwerr]
+ok: [jellyseerr]
+ok: [qbittorrent]
+ok: [gotify]
+ok: [uptime_kuma]
+ok: [homepage]
+ok: [syncthing]
+ok: [vaultwarden]
+
+TASK [Reboot the container if upgrade was done] ********************************
+changed: [prometheus]
+changed: [prowlarr]
+changed: [sonarr]
+changed: [flaresolwerr]
+changed: [tautulli]
+changed: [qbittorrent]
+changed: [tdarr]
+changed: [jellyfin]
+changed: [plex]
+changed: [jellyseerr]
+changed: [gotify]
+changed: [homepage]
+changed: [syncthing]
+changed: [uptime_kuma]
+changed: [vaultwarden]
+
+PLAY RECAP *********************************************************************
+flaresolwerr               : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gotify                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+homepage                   : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+jellyfin                   : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+jellyseerr                 : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+plex                       : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+prometheus                 : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+prowlarr                   : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+qbittorrent                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+radarr                     : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+sonarr                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+syncthing                  : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+tautulli                   : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+tdarr                      : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+uptime_kuma                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+vaultwarden                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

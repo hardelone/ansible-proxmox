@@ -1,0 +1,1343 @@
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+changed: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ [ERROR]: User interrupted execution
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+[WARNING]: Unhandled error in Python interpreter discovery for host contabo:
+Failed to connect to the host via ssh: Connection timed out during banner
+exchange  Connection to 213.199.52.4 port 2200 timed out
+ok: [jumpbox]
+ok: [kasm]
+ok: [grafana]
+ok: [proxy]
+fatal: [contabo]: FAILED! => {"ansible_facts": {}, "changed": false, "failed_modules": {"ansible.legacy.setup": {"ansible_facts": {"discovered_interpreter_python": "/usr/bin/python"}, "failed": true, "module_stderr": "Connection to 213.199.52.4 closed.\r\n", "module_stdout": "/bin/sh: 1: /usr/bin/python: not found\r\n", "msg": "The module failed to execute correctly, you probably need to set the interpreter.\nSee stdout/stderr for the exact error", "rc": 127, "warnings": ["Platform unknown on host contabo is using the discovered Python interpreter at /usr/bin/python, but future installation of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.14/reference_appendices/interpreter_discovery.html for more information."]}}, "msg": "The following modules failed to execute: ansible.legacy.setup\n"}
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+changed: [kasm]
+changed: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [grafana]
+ok: [proxy]
+ [ERROR]: User interrupted execution
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [proxy]
+ok: [jumpbox]
+ok: [grafana]
+fatal: [contabo]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange\r\nConnection to 213.199.52.4 port 2200 timed out", "unreachable": true}
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [proxy]
+ok: [jumpbox]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [grafana]
+ok: [kasm]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+fatal: [contabo]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Connection timed out during banner exchange\r\nConnection to 213.199.52.4 port 2200 timed out", "unreachable": true}
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [grafana]
+ok: [proxy]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+changed: [kasm]
+changed: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [grafana]
+ok: [proxy]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+fatal: [contabo]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 213.199.52.4 port 2200: Connection timed out", "unreachable": true}
+changed: [proxy]
+changed: [jumpbox]
+ok: [grafana]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [jumpbox]
+ok: [kasm]
+ok: [grafana]
+ok: [proxy]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=1    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+

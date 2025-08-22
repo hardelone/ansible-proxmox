@@ -1,0 +1,82 @@
+
+PLAY [Update and restart LXC containers via SSH] *******************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [prowlarr]
+ok: [sonarr]
+ok: [prometheus]
+ok: [radarr]
+ok: [plex]
+ok: [tautulli]
+ok: [flaresolwerr]
+ok: [qbittorrent]
+ok: [jellyfin]
+ok: [jellyseerr]
+ok: [gotify]
+ok: [homepage]
+ok: [uptime_kuma]
+fatal: [tdarr]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.20.40.56 port 22: No route to host", "unreachable": true}
+fatal: [vaultwarden]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.20.40.75 port 22: No route to host", "unreachable": true}
+fatal: [syncthing]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.20.40.102 port 22: No route to host", "unreachable": true}
+
+TASK [Update apt cache on LXC container] ***************************************
+changed: [sonarr]
+changed: [radarr]
+changed: [prowlarr]
+changed: [prometheus]
+changed: [tautulli]
+changed: [flaresolwerr]
+changed: [qbittorrent]
+changed: [gotify]
+changed: [jellyfin]
+changed: [homepage]
+changed: [uptime_kuma]
+changed: [plex]
+changed: [jellyseerr]
+
+TASK [Upgrade packages on LXC container] ***************************************
+ok: [plex]
+changed: [sonarr]
+changed: [prowlarr]
+changed: [prometheus]
+changed: [tautulli]
+fatal: [flaresolwerr]: FAILED! => {"changed": false, "msg": "'/usr/bin/apt-get dist-upgrade ' failed: E: You don't have enough free space in /var/cache/apt/archives/.\n", "rc": 100, "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nCalculating upgrade...\nThe following package was automatically installed and is no longer required:\n  libu2f-udev\nUse 'apt autoremove' to remove it.\nThe following packages will be upgraded:\n  google-chrome-stable libgdk-pixbuf-2.0-0 libgdk-pixbuf2.0-bin\n  libgdk-pixbuf2.0-common libicu72 libxml2 xserver-common xvfb\n8 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n1 not fully installed or removed.\nNeed to get 134 MB of archives.\nAfter this operation, 1939 kB of additional disk space will be used.\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "Calculating upgrade...", "The following package was automatically installed and is no longer required:", "  libu2f-udev", "Use 'apt autoremove' to remove it.", "The following packages will be upgraded:", "  google-chrome-stable libgdk-pixbuf-2.0-0 libgdk-pixbuf2.0-bin", "  libgdk-pixbuf2.0-common libicu72 libxml2 xserver-common xvfb", "8 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.", "1 not fully installed or removed.", "Need to get 134 MB of archives.", "After this operation, 1939 kB of additional disk space will be used."]}
+fatal: [radarr]: FAILED! => {"changed": false, "msg": "'/usr/bin/apt-get dist-upgrade ' failed: E: Sub-process /usr/bin/dpkg returned an error code (1)\n", "rc": 100, "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nCalculating upgrade...\nThe following packages will be upgraded:\n  libicu72 libxml2\n2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n3 not fully installed or removed.\nNeed to get 10.1 MB of archives.\nAfter this operation, 0 B of additional disk space will be used.\nGet:1 http://security.debian.org bookworm-security/main amd64 libicu72 amd64 72.1-3+deb12u1 [9376 kB]\nGet:2 http://security.debian.org bookworm-security/main amd64 libxml2 amd64 2.9.14+dfsg-1.3~deb12u2 [687 kB]\napt-listchanges: Reading changelogs...\nFetched 10.1 MB in 1s (9001 kB/s)\n(Reading database ... \r(Reading database ... 5%\r(Reading database ... 10%\r(Reading database ... 15%\r(Reading database ... 20%\r(Reading database ... 25%\r(Reading database ... 30%\r(Reading database ... 35%\r(Reading database ... 40%\r(Reading database ... 45%\r(Reading database ... 50%\r(Reading database ... 55%\r(Reading database ... 60%\r(Reading database ... 65%\r(Reading database ... 70%\r(Reading database ... 75%\r(Reading database ... 80%\r(Reading database ... 85%\r(Reading database ... 90%\r(Reading database ... 95%\r(Reading database ... 100%\r(Reading database ... 20365 files and directories currently installed.)\r\nPreparing to unpack .../libicu72_72.1-3+deb12u1_amd64.deb ...\r\nUnpacking libicu72:amd64 (72.1-3+deb12u1) over (72.1-3) ...\r\nPreparing to unpack .../libxml2_2.9.14+dfsg-1.3~deb12u2_amd64.deb ...\r\nUnpacking libxml2:amd64 (2.9.14+dfsg-1.3~deb12u2) over (2.9.14+dfsg-1.3~deb12u1) ...\r\nSetting up libicu72:amd64 (72.1-3+deb12u1) ...\r\nSetting up openssh-client (1:9.2p1-2+deb12u6) ...\r\nchgrp: changing group of '/usr/bin/ssh-agent': Invalid argument\r\ndpkg: error processing package openssh-client (--configure):\r\n installed openssh-client package post-installation script subprocess returned error exit status 1\r\nSetting up libxml2:amd64 (2.9.14+dfsg-1.3~deb12u2) ...\r\ndpkg: dependency problems prevent configuration of openssh-sftp-server:\r\n openssh-sftp-server depends on openssh-client (= 1:9.2p1-2+deb12u6); however:\r\n  Package openssh-client is not configured yet.\r\n\r\ndpkg: error processing package openssh-sftp-server (--configure):\r\n dependency problems - leaving unconfigured\r\ndpkg: dependency problems prevent configuration of openssh-server:\r\n openssh-server depends on openssh-client (= 1:9.2p1-2+deb12u6); however:\r\n  Package openssh-client is not configured yet.\r\n openssh-server depends on openssh-sftp-server; however:\r\n  Package openssh-sftp-server is not configured yet.\r\n\r\ndpkg: error processing package openssh-server (--configure):\r\n dependency problems - leaving unconfigured\r\nProcessing triggers for libc-bin (2.36-9+deb12u10) ...\r\nErrors were encountered while processing:\r\n openssh-client\r\n openssh-sftp-server\r\n openssh-server\r\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "Calculating upgrade...", "The following packages will be upgraded:", "  libicu72 libxml2", "2 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.", "3 not fully installed or removed.", "Need to get 10.1 MB of archives.", "After this operation, 0 B of additional disk space will be used.", "Get:1 http://security.debian.org bookworm-security/main amd64 libicu72 amd64 72.1-3+deb12u1 [9376 kB]", "Get:2 http://security.debian.org bookworm-security/main amd64 libxml2 amd64 2.9.14+dfsg-1.3~deb12u2 [687 kB]", "apt-listchanges: Reading changelogs...", "Fetched 10.1 MB in 1s (9001 kB/s)", "(Reading database ... ", "(Reading database ... 5%", "(Reading database ... 10%", "(Reading database ... 15%", "(Reading database ... 20%", "(Reading database ... 25%", "(Reading database ... 30%", "(Reading database ... 35%", "(Reading database ... 40%", "(Reading database ... 45%", "(Reading database ... 50%", "(Reading database ... 55%", "(Reading database ... 60%", "(Reading database ... 65%", "(Reading database ... 70%", "(Reading database ... 75%", "(Reading database ... 80%", "(Reading database ... 85%", "(Reading database ... 90%", "(Reading database ... 95%", "(Reading database ... 100%", "(Reading database ... 20365 files and directories currently installed.)", "Preparing to unpack .../libicu72_72.1-3+deb12u1_amd64.deb ...", "Unpacking libicu72:amd64 (72.1-3+deb12u1) over (72.1-3) ...", "Preparing to unpack .../libxml2_2.9.14+dfsg-1.3~deb12u2_amd64.deb ...", "Unpacking libxml2:amd64 (2.9.14+dfsg-1.3~deb12u2) over (2.9.14+dfsg-1.3~deb12u1) ...", "Setting up libicu72:amd64 (72.1-3+deb12u1) ...", "Setting up openssh-client (1:9.2p1-2+deb12u6) ...", "chgrp: changing group of '/usr/bin/ssh-agent': Invalid argument", "dpkg: error processing package openssh-client (--configure):", " installed openssh-client package post-installation script subprocess returned error exit status 1", "Setting up libxml2:amd64 (2.9.14+dfsg-1.3~deb12u2) ...", "dpkg: dependency problems prevent configuration of openssh-sftp-server:", " openssh-sftp-server depends on openssh-client (= 1:9.2p1-2+deb12u6); however:", "  Package openssh-client is not configured yet.", "", "dpkg: error processing package openssh-sftp-server (--configure):", " dependency problems - leaving unconfigured", "dpkg: dependency problems prevent configuration of openssh-server:", " openssh-server depends on openssh-client (= 1:9.2p1-2+deb12u6); however:", "  Package openssh-client is not configured yet.", " openssh-server depends on openssh-sftp-server; however:", "  Package openssh-sftp-server is not configured yet.", "", "dpkg: error processing package openssh-server (--configure):", " dependency problems - leaving unconfigured", "Processing triggers for libc-bin (2.36-9+deb12u10) ...", "Errors were encountered while processing:", " openssh-client", " openssh-sftp-server", " openssh-server"]}
+changed: [gotify]
+changed: [homepage]
+changed: [uptime_kuma]
+changed: [qbittorrent]
+changed: [jellyfin]
+changed: [jellyseerr]
+
+TASK [Reboot the container if upgrade was done] ********************************
+changed: [tautulli]
+changed: [plex]
+changed: [prometheus]
+changed: [prowlarr]
+changed: [jellyfin]
+changed: [jellyseerr]
+changed: [qbittorrent]
+changed: [gotify]
+changed: [homepage]
+changed: [uptime_kuma]
+fatal: [sonarr]: FAILED! => {"msg": "Failed to connect to the host via ssh: ssh: connect to host 10.20.40.53 port 22: Connection refused"}
+
+PLAY RECAP *********************************************************************
+flaresolwerr               : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+gotify                     : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+homepage                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+jellyfin                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+jellyseerr                 : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+plex                       : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+prometheus                 : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+prowlarr                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+qbittorrent                : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+radarr                     : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+sonarr                     : ok=3    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+syncthing                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+tautulli                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+tdarr                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+uptime_kuma                : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+vaultwarden                : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+

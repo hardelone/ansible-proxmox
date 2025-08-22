@@ -1,0 +1,38 @@
+
+PLAY [Update VM nodes] *********************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [proxy]
+ok: [jumpbox]
+ok: [kasm]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Update apt cache] ********************************************************
+ok: [kasm]
+ok: [grafana]
+changed: [proxy]
+changed: [jumpbox]
+ok: [contabo]
+
+TASK [Perform dist-upgrade] ****************************************************
+ok: [kasm]
+ok: [jumpbox]
+ok: [proxy]
+ok: [grafana]
+ok: [contabo]
+
+TASK [Reboot if necessary] *****************************************************
+skipping: [contabo]
+skipping: [jumpbox]
+skipping: [grafana]
+skipping: [proxy]
+skipping: [kasm]
+
+PLAY RECAP *********************************************************************
+contabo                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+grafana                    : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+jumpbox                    : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+kasm                       : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+proxy                      : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+

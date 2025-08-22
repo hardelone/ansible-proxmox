@@ -1,0 +1,23 @@
+---
+- name: Update and restart LXC containers via SSH
+  hosts: lxc
+  become: yes
+  tasks:
+    - name: Update apt cache on LXC container
+      ansible.builtin.apt:
+        update_cache: yes
+      become: yes
+      become_method: sudo
+
+    - name: Upgrade packages on LXC container
+      ansible.builtin.apt:
+        upgrade: dist
+        cache_valid_time: 3600
+      become: yes
+      become_method: sudo
+
+    - name: Reboot the container if upgrade was done
+      ansible.builtin.reboot:
+        msg: "Rebooting the container after upgrade"
+        reboot_timeout: 600
+      when: ansible_facts['pkg_mgr'] == 'apt'

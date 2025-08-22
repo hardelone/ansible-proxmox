@@ -1,0 +1,34 @@
+[proxmox]
+dumbledore ansible_host=10.20.40.14 ansible_ssh_user=root
+harry ansible_host=10.20.40.10 ansible_ssh_user=root
+ron ansible_host=10.20.40.11 ansible_ssh_user=root
+hermiona ansible_host=10.20.40.12 ansible_ssh_user=root
+proxbackup ansible_host=10.20.40.5 ansible_ssh_user=root
+
+[vm]
+contabo ansible_host=213.199.52.4 ansible_ssh_user=root ansible_ssh_port=2200
+jumpbox ansible_host=10.20.40.80
+#docker ansible_host=10.20.40.35
+#vscode ansible_host=10.20.40.70
+grafana ansible_host=10.20.40.33
+#testy ansible_host=10.20.40.101
+proxy ansible_host=10.20.40.77
+kasm ansible_host=10.20.40.76
+
+[lxc]
+prometheus ansible_host=10.20.40.110 ansible_ssh_user=root
+plex ansible_host=10.20.40.50 ansible_ssh_user=root
+radarr ansible_host=10.20.40.52 ansible_ssh_user=root
+sonarr ansible_host=10.20.40.53 ansible_ssh_user=root
+prowlarr ansible_host=10.20.40.54 ansible_ssh_user=root
+tautulli ansible_host=10.20.40.55 ansible_ssh_user=root
+tdarr ansible_host=10.20.40.56 ansible_ssh_user=root
+flaresolwerr ansible_host=10.20.40.57 ansible_ssh_user=root
+qbittorrent ansible_host=10.20.40.58 ansible_ssh_user=root
+jellyfin ansible_host=10.20.40.59 ansible_ssh_user=root
+jellyseerr ansible_host=10.20.40.60 ansible_ssh_user=root
+gotify ansible_host=10.20.40.32 ansible_ssh_user=root
+homepage ansible_host=10.20.40.101 ansible_ssh_user=root
+uptime_kuma ansible_host=10.20.40.31 ansible_ssh_user=root
+vaultwarden ansible_host=10.20.40.75 ansible_ssh_user=root
+syncthing ansible_host=10.20.40.102 ansible_ssh_user=root

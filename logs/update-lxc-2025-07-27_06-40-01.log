@@ -1,0 +1,54 @@
+
+PLAY [Update and restart LXC containers via SSH] *******************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [sonarr]
+ok: [prometheus]
+ok: [prowlarr]
+ok: [plex]
+ok: [radarr]
+ok: [tautulli]
+ok: [flaresolwerr]
+ok: [qbittorrent]
+ok: [jellyfin]
+ok: [jellyseerr]
+ok: [gotify]
+ok: [homepage]
+fatal: [tdarr]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.20.40.56 port 22: No route to host", "unreachable": true}
+ok: [uptime_kuma]
+fatal: [vaultwarden]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.20.40.75 port 22: No route to host", "unreachable": true}
+fatal: [syncthing]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.20.40.102 port 22: No route to host", "unreachable": true}
+
+TASK [Update apt cache on LXC container] ***************************************
+fatal: [radarr]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [prowlarr]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [plex]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [prometheus]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [sonarr]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [qbittorrent]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [tautulli]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [flaresolwerr]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [jellyfin]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [jellyseerr]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [gotify]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [homepage]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+fatal: [uptime_kuma]: FAILED! => {"changed": false, "msg": "Failed to update apt cache: unknown reason"}
+
+PLAY RECAP *********************************************************************
+flaresolwerr               : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+gotify                     : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+homepage                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+jellyfin                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+jellyseerr                 : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+plex                       : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+prometheus                 : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+prowlarr                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+qbittorrent                : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+radarr                     : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+sonarr                     : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+syncthing                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+tautulli                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+tdarr                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+uptime_kuma                : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+vaultwarden                : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+

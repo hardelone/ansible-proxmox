@@ -1,0 +1,86 @@
+
+PLAY [Update and restart LXC containers via SSH] *******************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [prowlarr]
+ok: [sonarr]
+ok: [prometheus]
+ok: [radarr]
+ok: [plex]
+ok: [tautulli]
+ok: [flaresolwerr]
+ok: [jellyfin]
+ok: [qbittorrent]
+ok: [jellyseerr]
+ok: [gotify]
+fatal: [tdarr]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.20.40.56 port 22: No route to host", "unreachable": true}
+ok: [homepage]
+ok: [uptime_kuma]
+fatal: [syncthing]: UNREACHABLE! => {"changed": false, "msg": "Failed to create temporary directory. In some cases, you may have been able to authenticate and did not have permissions on the target directory. Consider changing the remote tmp path in ansible.cfg to a path rooted in \"/tmp\", for more error information use -vvv. Failed command was: ( umask 77 && mkdir -p \"` echo /root/.ansible/tmp `\"&& mkdir \"` echo /root/.ansible/tmp/ansible-tmp-1745728807.1625507-7634-232872168785093 `\" && echo ansible-tmp-1745728807.1625507-7634-232872168785093=\"` echo /root/.ansible/tmp/ansible-tmp-1745728807.1625507-7634-232872168785093 `\" ), exited with result 1", "unreachable": true}
+ok: [vaultwarden]
+
+TASK [Update apt cache on LXC container] ***************************************
+changed: [sonarr]
+changed: [radarr]
+changed: [prowlarr]
+changed: [prometheus]
+changed: [tautulli]
+changed: [flaresolwerr]
+changed: [gotify]
+changed: [homepage]
+changed: [uptime_kuma]
+changed: [vaultwarden]
+changed: [plex]
+changed: [jellyseerr]
+changed: [qbittorrent]
+changed: [jellyfin]
+
+TASK [Upgrade packages on LXC container] ***************************************
+ok: [sonarr]
+ok: [prometheus]
+ok: [prowlarr]
+ok: [tautulli]
+ok: [qbittorrent]
+ok: [jellyfin]
+fatal: [radarr]: FAILED! => {"changed": false, "msg": "'/usr/bin/apt-get dist-upgrade ' failed: E: Sub-process /usr/bin/dpkg returned an error code (1)\n", "rc": 100, "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nCalculating upgrade...\n0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n3 not fully installed or removed.\nAfter this operation, 0 B of additional disk space will be used.\nSetting up openssh-client (1:9.2p1-2+deb12u5) ...\r\nchgrp: changing group of '/usr/bin/ssh-agent': Invalid argument\r\ndpkg: error processing package openssh-client (--configure):\r\n installed openssh-client package post-installation script subprocess returned error exit status 1\r\ndpkg: dependency problems prevent configuration of openssh-sftp-server:\r\n openssh-sftp-server depends on openssh-client (= 1:9.2p1-2+deb12u5); however:\r\n  Package openssh-client is not configured yet.\r\n\r\ndpkg: error processing package openssh-sftp-server (--configure):\r\n dependency problems - leaving unconfigured\r\ndpkg: dependency problems prevent configuration of openssh-server:\r\n openssh-server depends on openssh-client (= 1:9.2p1-2+deb12u5); however:\r\n  Package openssh-client is not configured yet.\r\n openssh-server depends on openssh-sftp-server; however:\r\n  Package openssh-sftp-server is not configured yet.\r\n\r\ndpkg: error processing package openssh-server (--configure):\r\n dependency problems - leaving unconfigured\r\nErrors were encountered while processing:\r\n openssh-client\r\n openssh-sftp-server\r\n openssh-server\r\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "Calculating upgrade...", "0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.", "3 not fully installed or removed.", "After this operation, 0 B of additional disk space will be used.", "Setting up openssh-client (1:9.2p1-2+deb12u5) ...", "chgrp: changing group of '/usr/bin/ssh-agent': Invalid argument", "dpkg: error processing package openssh-client (--configure):", " installed openssh-client package post-installation script subprocess returned error exit status 1", "dpkg: dependency problems prevent configuration of openssh-sftp-server:", " openssh-sftp-server depends on openssh-client (= 1:9.2p1-2+deb12u5); however:", "  Package openssh-client is not configured yet.", "", "dpkg: error processing package openssh-sftp-server (--configure):", " dependency problems - leaving unconfigured", "dpkg: dependency problems prevent configuration of openssh-server:", " openssh-server depends on openssh-client (= 1:9.2p1-2+deb12u5); however:", "  Package openssh-client is not configured yet.", " openssh-server depends on openssh-sftp-server; however:", "  Package openssh-sftp-server is not configured yet.", "", "dpkg: error processing package openssh-server (--configure):", " dependency problems - leaving unconfigured", "Errors were encountered while processing:", " openssh-client", " openssh-sftp-server", " openssh-server"]}
+ok: [gotify]
+changed: [homepage]
+ok: [vaultwarden]
+changed: [flaresolwerr]
+changed: [uptime_kuma]
+changed: [plex]
+changed: [jellyseerr]
+
+TASK [Reboot the container if upgrade was done] ********************************
+changed: [plex]
+changed: [prowlarr]
+changed: [tautulli]
+changed: [prometheus]
+changed: [flaresolwerr]
+changed: [jellyseerr]
+changed: [jellyfin]
+changed: [qbittorrent]
+changed: [gotify]
+changed: [homepage]
+changed: [vaultwarden]
+changed: [uptime_kuma]
+fatal: [sonarr]: FAILED! => {"msg": "Failed to connect to the host via ssh: ssh: connect to host 10.20.40.53 port 22: Connection refused"}
+
+PLAY RECAP *********************************************************************
+flaresolwerr               : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+gotify                     : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+homepage                   : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+jellyfin                   : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+jellyseerr                 : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+plex                       : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+prometheus                 : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+prowlarr                   : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+qbittorrent                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+radarr                     : ok=2    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+sonarr                     : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+syncthing                  : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+tautulli                   : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+tdarr                      : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+uptime_kuma                : ok=4    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+vaultwarden                : ok=4    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
